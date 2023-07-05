@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.4 on win32)" generated="20230705 16:44:33.540" rpa="false" schemaversion="4">
+<suite id="s1" name="Valid Login" source="C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\login_tests\valid_login.robot">
+<test id="s1-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230705 16:44:33.732" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/login'.</msg>
+<msg timestamp="20230705 16:44:33.737" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230705 16:44:33.731" endtime="20230705 16:44:35.169"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230705 16:44:35.169" endtime="20230705 16:44:35.292"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230705 16:44:35.292" endtime="20230705 16:44:35.292"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Login | DXT360 App</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230705 16:44:35.297" level="INFO">Page title is 'Login | DXT360 App'.</msg>
+<status status="PASS" starttime="20230705 16:44:35.292" endtime="20230705 16:44:35.297"/>
+</kw>
+<status status="PASS" starttime="20230705 16:44:35.292" endtime="20230705 16:44:35.297"/>
+</kw>
+<status status="PASS" starttime="20230705 16:44:33.731" endtime="20230705 16:44:35.297"/>
+</kw>
+<kw name="Input Username" library="resource">
+<arg>demo.analytics@dxt360.app</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[placeholder="Please enter your email Address"]</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230705 16:44:35.298" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
+<status status="PASS" starttime="20230705 16:44:35.297" endtime="20230705 16:44:35.426"/>
+</kw>
+<status status="PASS" starttime="20230705 16:44:35.297" endtime="20230705 16:44:35.426"/>
+</kw>
+<kw name="Input Password" library="resource">
+<arg>p3iN%u49</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[placeholder="Please enter your password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230705 16:44:35.427" level="INFO">Typing text 'p3iN%u49' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
+<status status="PASS" starttime="20230705 16:44:35.426" endtime="20230705 16:44:35.497"/>
+</kw>
+<status status="PASS" starttime="20230705 16:44:35.426" endtime="20230705 16:44:35.497"/>
+</kw>
+<status status="PASS" starttime="20230705 16:44:33.730" endtime="20230705 16:44:35.497"/>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20230705 16:44:33.543" endtime="20230705 16:44:35.498"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
