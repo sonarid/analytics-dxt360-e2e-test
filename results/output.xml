@@ -1,584 +1,632 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.10.4 on win32)" generated="20230711 16:54:51.306" rpa="false" schemaversion="4">
-<suite id="s1" name="Invalid Login" source="C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\tests\login\invalid_login.robot">
-<kw name="Open Browser To Login Page" library="general" type="SETUP">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20230718 14:06:22.586" rpa="false" schemaversion="3">
+<suite id="s1" name="Valid Login" source="C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\tests\login\valid_login.robot">
+<test id="s1-t1" name="Valid Login" line="13">
+<kw name="Open Browser To Login Page" library="general">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${WELCOME URL}</arg>
+<arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230711 16:54:51.496" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/'.</msg>
-<msg timestamp="20230711 16:54:51.496" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
-<status status="PASS" starttime="20230711 16:54:51.496" endtime="20230711 16:54:53.007"/>
+<msg timestamp="20230718 14:06:22.821" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/login'.</msg>
+<status status="PASS" starttime="20230718 14:06:22.821" endtime="20230718 14:06:24.280"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230711 16:54:53.007" endtime="20230711 16:54:53.123"/>
+<status status="PASS" starttime="20230718 14:06:24.280" endtime="20230718 14:06:24.404"/>
 </kw>
 <kw name="Login Page Should Be Open" library="general">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230718 14:06:24.404" endtime="20230718 14:06:24.404"/>
+</kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login | DXT360 App</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:54:53.127" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:54:53.123" endtime="20230711 16:54:53.127"/>
+<msg timestamp="20230718 14:06:24.404" level="INFO">Page title is 'Login | DXT360 App'.</msg>
+<status status="PASS" starttime="20230718 14:06:24.404" endtime="20230718 14:06:24.404"/>
 </kw>
-<status status="PASS" starttime="20230711 16:54:53.123" endtime="20230711 16:54:53.127"/>
+<status status="PASS" starttime="20230718 14:06:24.404" endtime="20230718 14:06:24.404"/>
 </kw>
-<status status="PASS" starttime="20230711 16:54:51.496" endtime="20230711 16:54:53.127"/>
+<status status="PASS" starttime="20230718 14:06:22.821" endtime="20230718 14:06:24.404"/>
 </kw>
-<test id="s1-t1" name="Invalid Username" line="13">
-<kw name="Go To Login Page" library="general" type="SETUP">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 16:54:53.127" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 16:54:53.127" endtime="20230711 16:54:53.238"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:54:53.244" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:54:53.238" endtime="20230711 16:54:53.244"/>
-</kw>
-<status status="PASS" starttime="20230711 16:54:53.238" endtime="20230711 16:54:53.244"/>
-</kw>
-<status status="PASS" starttime="20230711 16:54:53.127" endtime="20230711 16:54:53.244"/>
-</kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${INVALID USER}</arg>
-<arg>${VALID PASSWORD}</arg>
 <kw name="Input Username" library="general">
-<arg>${username}</arg>
+<arg>demo.analytics@dxt360.app</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>css:input[placeholder="Please enter your email Address"]</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:54:53.245" level="INFO">Typing text 'fail@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 16:54:53.245" endtime="20230711 16:54:53.375"/>
+<msg timestamp="20230718 14:06:24.404" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
+<status status="PASS" starttime="20230718 14:06:24.404" endtime="20230718 14:06:24.536"/>
 </kw>
-<status status="PASS" starttime="20230711 16:54:53.245" endtime="20230711 16:54:53.375"/>
+<status status="PASS" starttime="20230718 14:06:24.404" endtime="20230718 14:06:24.538"/>
 </kw>
 <kw name="Input Password" library="general">
-<arg>${password}</arg>
+<arg>p3iN%u49</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>css:input[placeholder="Please enter your password"]</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:54:53.375" level="INFO">Typing text 'p3iN%u49' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 16:54:53.375" endtime="20230711 16:54:53.436"/>
+<msg timestamp="20230718 14:06:24.538" level="INFO">Typing text 'p3iN%u49' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
+<status status="PASS" starttime="20230718 14:06:24.538" endtime="20230718 14:06:24.605"/>
 </kw>
-<status status="PASS" starttime="20230711 16:54:53.375" endtime="20230711 16:54:53.436"/>
+<status status="PASS" starttime="20230718 14:06:24.538" endtime="20230718 14:06:24.605"/>
 </kw>
 <kw name="Wait Captcha" library="general">
 <kw name="Pause Execution" library="Dialogs">
 <arg>Enter captcha</arg>
 <doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 16:54:53.436" endtime="20230711 16:55:50.487"/>
+<status status="PASS" starttime="20230718 14:06:24.606" endtime="20230718 14:06:30.161"/>
 </kw>
-<status status="PASS" starttime="20230711 16:54:53.436" endtime="20230711 16:55:50.487"/>
+<status status="PASS" starttime="20230718 14:06:24.606" endtime="20230718 14:06:30.161"/>
 </kw>
 <kw name="Submit Credentials" library="general">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 16:55:50.487" endtime="20230711 16:55:50.487"/>
+<status status="PASS" starttime="20230718 14:06:30.162" endtime="20230718 14:06:30.162"/>
 </kw>
 <kw name="Submit Form" library="SeleniumLibrary">
 <arg>//form</arg>
 <doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 16:55:50.488" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 16:55:50.487" endtime="20230711 16:55:53.524"/>
+<msg timestamp="20230718 14:06:30.163" level="INFO">Submitting form '//form'.</msg>
+<msg timestamp="20230718 14:06:31.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.186" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230718 14:06:30.163" endtime="20230718 14:06:31.202"/>
 </kw>
-<status status="PASS" starttime="20230711 16:55:50.487" endtime="20230711 16:55:53.524"/>
+<status status="FAIL" starttime="20230718 14:06:30.162" endtime="20230718 14:06:31.202"/>
 </kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:55:54.537" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:55:53.524" endtime="20230711 16:55:54.537"/>
+<kw name="Get Cookies" library="SeleniumLibrary">
+<var>${cookies}</var>
+<doc>Returns all cookies of the current page.</doc>
+<status status="NOT RUN" starttime="20230718 14:06:31.202" endtime="20230718 14:06:31.202"/>
 </kw>
-<status status="PASS" starttime="20230711 16:55:53.524" endtime="20230711 16:55:54.537"/>
+<kw name="Create File" library="OperatingSystem">
+<arg>session_cookies.txt</arg>
+<arg>${cookies}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="NOT RUN" starttime="20230718 14:06:31.202" endtime="20230718 14:06:31.202"/>
 </kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 16:55:57.731" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 16:55:57.732" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 16:55:54.538" endtime="20230711 16:55:57.733"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:55:54.537" endtime="20230711 16:55:57.733"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:54:53.245" endtime="20230711 16:55:57.733"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:54:53.127" endtime="20230711 16:55:57.733">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
+<status status="FAIL" starttime="20230718 14:06:22.821" endtime="20230718 14:06:31.202">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</status>
 </test>
-<test id="s1-t2" name="Invalid Password" line="14">
-<kw name="Go To Login Page" library="general" type="SETUP">
+<test id="s1-t2" name="Open Analytics" line="26">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
+<arg>${WELCOME URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 16:55:57.734" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 16:55:57.734" endtime="20230711 16:55:58.835"/>
+<msg timestamp="20230718 14:06:31.202" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/'</msg>
+<msg timestamp="20230718 14:06:31.218" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.218" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230718 14:06:31.202" endtime="20230718 14:06:31.218"/>
 </kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:55:59.843" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:55:58.835" endtime="20230711 16:55:59.843"/>
+<kw name="Load Saved Cookies" library="general" type="TEARDOWN">
+<kw name="Get File" library="OperatingSystem">
+<var>${cookies}</var>
+<arg>session_cookies.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20230718 14:06:31.218" level="INFO" html="true">Getting file '&lt;a href="file://C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\session_cookies.txt"&gt;C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\session_cookies.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20230718 14:06:31.218" level="INFO">${cookies} = __Secure-next-auth.session-token.dxt=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..e7hPb1jHcOmqqa3a.biFEIGElNIyI_a39Nika8qXts-2ZjdxfYASbKX1PiVGVUJyNiVVOnphu_5gcg5U-B6lWmSy0vZEc4KUTdnK1fYocPkFYMVbSkm8WgBgmc...</msg>
+<status status="PASS" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.218"/>
 </kw>
-<status status="PASS" starttime="20230711 16:55:58.835" endtime="20230711 16:55:59.843"/>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<msg timestamp="20230718 14:06:31.218" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.218" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.218"/>
 </kw>
-<status status="PASS" starttime="20230711 16:55:57.734" endtime="20230711 16:55:59.843"/>
+<for flavor="IN">
+<var>${cookie_line}</var>
+<value>@{cookies.splitlines()}</value>
+<iter>
+<var name="${cookie_line}">__Secure-next-auth.session-token.dxt=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..e7hPb1jHcOmqqa3a.biFEIGElNIyI_a39Nika8qXts-2ZjdxfYASbKX1PiVGVUJyNiVVOnphu_5gcg5U-B6lWmSy0vZEc4KUTdnK1fYocPkFYMVbSkm8WgBgmc...</var>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${cookie_line}' != ''</arg>
+<arg>Process Cookie Line</arg>
+<arg>${cookie_line}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Process Cookie Line" library="general">
+<arg>${cookie_line}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name_and_value}</var>
+<arg>$cookie_line.split(';')[0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230718 14:06:31.218" level="INFO">${name_and_value} = __Secure-next-auth.session-token.dxt=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..e7hPb1jHcOmqqa3a.biFEIGElNIyI_a39Nika8qXts-2ZjdxfYASbKX1PiVGVUJyNiVVOnphu_5gcg5U-B6lWmSy0vZEc4KUTdnK1fYocPkFYMVbSkm8WgBgmc...</msg>
+<status status="PASS" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.218"/>
 </kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${VALID USER}</arg>
-<arg>${INVALID PASSWORD}</arg>
-<kw name="Input Username" library="general">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your email Address"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:55:59.844" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 16:55:59.844" endtime="20230711 16:56:02.967"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name}</var>
+<var>${value}</var>
+<arg>$name_and_value.split('=', 1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230718 14:06:31.218" level="INFO">${name} = __Secure-next-auth.session-token.dxt</msg>
+<msg timestamp="20230718 14:06:31.218" level="INFO">${value} = eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..e7hPb1jHcOmqqa3a.biFEIGElNIyI_a39Nika8qXts-2ZjdxfYASbKX1PiVGVUJyNiVVOnphu_5gcg5U-B6lWmSy0vZEc4KUTdnK1fYocPkFYMVbSkm8WgBgmcAbws1p4aO4UnMQwNi5PSgd86t635JtFnD270b...</msg>
+<status status="PASS" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.218"/>
 </kw>
-<status status="PASS" starttime="20230711 16:55:59.844" endtime="20230711 16:56:02.967"/>
+<kw name="Add Cookie" library="SeleniumLibrary">
+<arg>${name}</arg>
+<arg>${value}</arg>
+<doc>Adds a cookie to your current session.</doc>
+<msg timestamp="20230718 14:06:31.233" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.233" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233"/>
 </kw>
-<kw name="Input Password" library="general">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:56:02.968" level="INFO">Typing text 'p3iN%u26' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 16:56:02.968" endtime="20230711 16:56:06.050"/>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233"/>
 </kw>
-<status status="PASS" starttime="20230711 16:56:02.967" endtime="20230711 16:56:06.050"/>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233"/>
 </kw>
-<kw name="Wait Captcha" library="general">
-<kw name="Pause Execution" library="Dialogs">
-<arg>Enter captcha</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 16:56:06.051" endtime="20230711 16:56:55.534"/>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233"/>
+</iter>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233"/>
+</for>
+<status status="FAIL" starttime="20230718 14:06:31.218" endtime="20230718 14:06:31.233">Several failures occurred:
+
+1) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+    [ Message content over the limit has been removed. ]
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]</status>
 </kw>
-<status status="PASS" starttime="20230711 16:56:06.050" endtime="20230711 16:56:55.534"/>
-</kw>
-<kw name="Submit Credentials" library="general">
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 16:56:55.535" endtime="20230711 16:56:55.536"/>
-</kw>
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>//form</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 16:56:55.536" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 16:56:55.536" endtime="20230711 16:56:58.575"/>
-</kw>
-<status status="PASS" starttime="20230711 16:56:55.535" endtime="20230711 16:56:58.575"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:56:59.591" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:56:58.575" endtime="20230711 16:56:59.591"/>
-</kw>
-<status status="PASS" starttime="20230711 16:56:58.575" endtime="20230711 16:56:59.591"/>
-</kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 16:57:02.787" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 16:57:02.787" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 16:56:59.591" endtime="20230711 16:57:02.787"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:56:59.591" endtime="20230711 16:57:02.787"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:55:59.843" endtime="20230711 16:57:02.787"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:55:57.734" endtime="20230711 16:57:02.788">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
+<status status="FAIL" starttime="20230718 14:06:31.202" endtime="20230718 14:06:31.233">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+
+
+Also teardown failed:
+Several failures occurred:
+
+1) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+    [ Message content over the limit has been removed. ]
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]</status>
 </test>
-<test id="s1-t3" name="Invalid Username And Password" line="15">
-<kw name="Go To Login Page" library="general" type="SETUP">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 16:57:02.789" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 16:57:02.789" endtime="20230711 16:57:03.861"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:57:04.873" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:57:03.861" endtime="20230711 16:57:04.873"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:03.861" endtime="20230711 16:57:04.873"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:02.788" endtime="20230711 16:57:04.873"/>
-</kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${INVALID USER}</arg>
-<arg>${INVALID PASSWORD}</arg>
-<kw name="Input Username" library="general">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your email Address"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:57:04.875" level="INFO">Typing text 'fail@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 16:57:04.874" endtime="20230711 16:57:07.974"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:04.874" endtime="20230711 16:57:07.974"/>
-</kw>
-<kw name="Input Password" library="general">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:57:07.975" level="INFO">Typing text 'p3iN%u26' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 16:57:07.974" endtime="20230711 16:57:11.054"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:07.974" endtime="20230711 16:57:11.054"/>
-</kw>
-<kw name="Wait Captcha" library="general">
-<kw name="Pause Execution" library="Dialogs">
-<arg>Enter captcha</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 16:57:11.054" endtime="20230711 16:57:56.052"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:11.054" endtime="20230711 16:57:56.052"/>
-</kw>
-<kw name="Submit Credentials" library="general">
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 16:57:56.053" endtime="20230711 16:57:56.053"/>
-</kw>
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>//form</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 16:57:56.053" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 16:57:56.053" endtime="20230711 16:57:59.098"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:56.053" endtime="20230711 16:57:59.098"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:58:00.110" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:57:59.099" endtime="20230711 16:58:00.110"/>
-</kw>
-<status status="PASS" starttime="20230711 16:57:59.098" endtime="20230711 16:58:00.110"/>
-</kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 16:58:03.308" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 16:58:03.308" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 16:58:00.111" endtime="20230711 16:58:03.309"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:58:00.110" endtime="20230711 16:58:03.309"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:57:04.874" endtime="20230711 16:58:03.309"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:57:02.788" endtime="20230711 16:58:03.310">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
-</test>
-<test id="s1-t4" name="Empty Username" line="16">
-<kw name="Go To Login Page" library="general" type="SETUP">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 16:58:03.311" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 16:58:03.311" endtime="20230711 16:58:04.397"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:58:05.414" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:58:04.398" endtime="20230711 16:58:05.414"/>
-</kw>
-<status status="PASS" starttime="20230711 16:58:04.397" endtime="20230711 16:58:05.414"/>
-</kw>
-<status status="PASS" starttime="20230711 16:58:03.310" endtime="20230711 16:58:05.414"/>
-</kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${EMPTY}</arg>
-<arg>${VALID PASSWORD}</arg>
-<kw name="Input Username" library="general">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your email Address"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:58:05.415" level="INFO">Typing text '' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 16:58:05.414" endtime="20230711 16:58:08.480"/>
-</kw>
-<status status="PASS" starttime="20230711 16:58:05.414" endtime="20230711 16:58:08.480"/>
-</kw>
-<kw name="Input Password" library="general">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:58:08.481" level="INFO">Typing text 'p3iN%u49' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 16:58:08.480" endtime="20230711 16:58:11.566"/>
-</kw>
-<status status="PASS" starttime="20230711 16:58:08.480" endtime="20230711 16:58:11.566"/>
-</kw>
-<kw name="Wait Captcha" library="general">
-<kw name="Pause Execution" library="Dialogs">
-<arg>Enter captcha</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 16:58:11.567" endtime="20230711 16:59:20.085"/>
-</kw>
-<status status="PASS" starttime="20230711 16:58:11.567" endtime="20230711 16:59:20.085"/>
-</kw>
-<kw name="Submit Credentials" library="general">
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 16:59:20.086" endtime="20230711 16:59:20.086"/>
-</kw>
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>//form</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 16:59:20.086" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 16:59:20.086" endtime="20230711 16:59:23.131"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:20.085" endtime="20230711 16:59:23.131"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:59:24.143" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:59:23.132" endtime="20230711 16:59:24.143"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:23.131" endtime="20230711 16:59:24.143"/>
-</kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 16:59:27.332" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 16:59:27.332" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 16:59:24.144" endtime="20230711 16:59:27.333"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:59:24.143" endtime="20230711 16:59:27.333"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:58:05.414" endtime="20230711 16:59:27.333"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:58:03.310" endtime="20230711 16:59:27.333">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
-</test>
-<test id="s1-t5" name="Empty Password" line="17">
-<kw name="Go To Login Page" library="general" type="SETUP">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 16:59:27.334" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 16:59:27.334" endtime="20230711 16:59:28.530"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 16:59:29.544" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 16:59:28.530" endtime="20230711 16:59:29.544"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:28.530" endtime="20230711 16:59:29.544"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:27.334" endtime="20230711 16:59:29.544"/>
-</kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${VALID USER}</arg>
-<arg>${EMPTY}</arg>
-<kw name="Input Username" library="general">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your email Address"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:59:29.545" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 16:59:29.545" endtime="20230711 16:59:32.682"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:29.545" endtime="20230711 16:59:32.682"/>
-</kw>
-<kw name="Input Password" library="general">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 16:59:32.683" level="INFO">Typing text '' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 16:59:32.682" endtime="20230711 16:59:35.746"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:32.682" endtime="20230711 16:59:35.746"/>
-</kw>
-<kw name="Wait Captcha" library="general">
-<kw name="Pause Execution" library="Dialogs">
-<arg>Enter captcha</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 16:59:35.747" endtime="20230711 17:00:08.198"/>
-</kw>
-<status status="PASS" starttime="20230711 16:59:35.746" endtime="20230711 17:00:08.198"/>
-</kw>
-<kw name="Submit Credentials" library="general">
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 17:00:08.199" endtime="20230711 17:00:08.199"/>
-</kw>
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>//form</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 17:00:08.199" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 17:00:08.199" endtime="20230711 17:00:11.244"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:08.198" endtime="20230711 17:00:11.244"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 17:00:12.257" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 17:00:11.245" endtime="20230711 17:00:12.257"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:11.245" endtime="20230711 17:00:12.257"/>
-</kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 17:00:15.464" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 17:00:15.464" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 17:00:12.257" endtime="20230711 17:00:15.464"/>
-</kw>
-<status status="FAIL" starttime="20230711 17:00:12.257" endtime="20230711 17:00:15.464"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:59:29.544" endtime="20230711 17:00:15.464"/>
-</kw>
-<status status="FAIL" starttime="20230711 16:59:27.333" endtime="20230711 17:00:15.465">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
-</test>
-<test id="s1-t6" name="Empty Username And Password" line="18">
-<kw name="Go To Login Page" library="general" type="SETUP">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230711 17:00:15.466" level="INFO">Opening url 'https://login-dxt360.sonarplatform.com/login'</msg>
-<status status="PASS" starttime="20230711 17:00:15.466" endtime="20230711 17:00:16.551"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 17:00:17.562" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 17:00:16.551" endtime="20230711 17:00:17.562"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:16.551" endtime="20230711 17:00:17.562"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:15.466" endtime="20230711 17:00:17.562"/>
-</kw>
-<kw name="Login With Invalid Credentials Should Fail">
-<arg>${EMPTY}</arg>
-<arg>${EMPTY}</arg>
-<kw name="Input Username" library="general">
-<arg>${username}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your email Address"]</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 17:00:17.564" level="INFO">Typing text '' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230711 17:00:17.564" endtime="20230711 17:00:20.632"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:17.564" endtime="20230711 17:00:20.632"/>
-</kw>
-<kw name="Input Password" library="general">
-<arg>${password}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230711 17:00:20.633" level="INFO">Typing text '' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230711 17:00:20.632" endtime="20230711 17:00:23.707"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:20.632" endtime="20230711 17:00:23.707"/>
-</kw>
-<kw name="Wait Captcha" library="general">
-<kw name="Pause Execution" library="Dialogs">
-<arg>Enter captcha</arg>
-<doc>Pauses execution until user clicks ``Ok`` button.</doc>
-<status status="PASS" starttime="20230711 17:00:23.707" endtime="20230711 17:01:14.506"/>
-</kw>
-<status status="PASS" starttime="20230711 17:00:23.707" endtime="20230711 17:01:14.506"/>
-</kw>
-<kw name="Submit Credentials" library="general">
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>${DELAY}</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230711 17:01:14.507" endtime="20230711 17:01:14.507"/>
-</kw>
-<kw name="Submit Form" library="SeleniumLibrary">
-<arg>//form</arg>
-<doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20230711 17:01:14.507" level="INFO">Submitting form '//form'.</msg>
-<status status="PASS" starttime="20230711 17:01:14.507" endtime="20230711 17:01:17.557"/>
-</kw>
-<status status="PASS" starttime="20230711 17:01:14.506" endtime="20230711 17:01:17.557"/>
-</kw>
-<kw name="Login Page Should Be Open" library="general">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Login | DXT360 App</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230711 17:01:18.569" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230711 17:01:17.558" endtime="20230711 17:01:18.569"/>
-</kw>
-<status status="PASS" starttime="20230711 17:01:17.557" endtime="20230711 17:01:18.569"/>
-</kw>
-<kw name="Login Should Have Failed">
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>css:div[background-color="#fff9f9"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20230711 17:01:21.768" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230711 17:01:21.769" level="FAIL">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</msg>
-<status status="FAIL" starttime="20230711 17:01:18.569" endtime="20230711 17:01:21.769"/>
-</kw>
-<status status="FAIL" starttime="20230711 17:01:18.569" endtime="20230711 17:01:21.769"/>
-</kw>
-<status status="FAIL" starttime="20230711 17:00:17.563" endtime="20230711 17:01:21.769"/>
-</kw>
-<status status="FAIL" starttime="20230711 17:00:15.465" endtime="20230711 17:01:21.769">Page should have contained element 'css:div[background-color="#fff9f9"]' but did not.</status>
-</test>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230711 17:01:21.770" endtime="20230711 17:01:24.819"/>
-</kw>
 <doc>A test suite with a single test for valid login.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="FAIL" starttime="20230711 16:54:51.306" endtime="20230711 17:01:24.819"/>
+<status status="FAIL" starttime="20230718 14:06:22.586" endtime="20230718 14:06:31.233"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="6" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="6" skip="0" id="s1" name="Invalid Login">Invalid Login</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Valid Login">Valid Login</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230718 14:06:22.617" level="ERROR">Error in file 'C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\resources\general.resource' on line 7: Importing library 'C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\resources\CookieLibrary.py' failed: SyntaxError: invalid syntax (CookieLibrary.py, line 18)
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\resources
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310
+  C:\Users\upt sg3\AppData\Roaming\Python\Python310\site-packages
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\lib\site-packages
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\lib\site-packages\win32
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\lib\site-packages\win32\lib
+  C:\Users\upt sg3\AppData\Local\Programs\Python\Python310\lib\site-packages\Pythonwin</msg>
+<msg timestamp="20230718 14:06:31.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.218" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.218" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230718 14:06:31.233" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x00E8A813+48355]
+	(No symbol) [0x00E1C4B1]
+	(No symbol) [0x00D25358]
+	(No symbol) [0x00D0D293]
+	(No symbol) [0x00D6E37B]
+	(No symbol) [0x00D7C473]
+	(No symbol) [0x00D6A536]
+	(No symbol) [0x00D482DC]
+	(No symbol) [0x00D493DD]
+	GetHandleVerifier [0x010EAABD+2539405]
+	GetHandleVerifier [0x0112A78F+2800735]
+	GetHandleVerifier [0x0112456C+2775612]
+	GetHandleVerifier [0x00F151E0+616112]
+	(No symbol) [0x00E25F8C]
+	(No symbol) [0x00E22328]
+	(No symbol) [0x00E2240B]
+	(No symbol) [0x00E14FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
 </errors>
 </robot>

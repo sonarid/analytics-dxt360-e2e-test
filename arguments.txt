@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\login\invalid_login.robot
+tests\login\valid_login.robot
