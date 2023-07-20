@@ -4,7 +4,6 @@ Documentation     A resource file with reusable keywords and variables.
 ...               The system specific keywords created here form our own
 ...               domain specific language. They utilize keywords provided
 ...               by the imported SeleniumLibrary.
-Library           CookieLibrary.py
 Library           SeleniumLibrary
 Library           Dialogs
 Library           XML
@@ -32,7 +31,6 @@ ${FORGOT URL}     https://${SERVER}/forgot-password
 *** Keywords ***
 Open Browser To Login Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
-    Maximize Browser Window
     Login Page Should Be Open
 
 Open Browser To Switch App Page
@@ -98,3 +96,6 @@ Process Cookie Line
     ${name_and_value}=    Evaluate    $cookie_line.split(';')[0]
     ${name}    ${value}=    Evaluate    $name_and_value.split('=', 1)
     Add Cookie    ${name}    ${value}
+
+Click Open App
+    Click Button    //button[text=]

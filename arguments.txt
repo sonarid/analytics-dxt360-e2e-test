@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\login\valid_login.robot
+tests\analytics\open_analytics.robot
