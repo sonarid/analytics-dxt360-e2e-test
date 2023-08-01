@@ -14,8 +14,9 @@ ${DELAY}          0
 ${VALID USER}     demo.analytics@dxt360.app
 ${VALID PASSWORD}    p3iN%u49
 ${LOGIN URL}      https://${SERVER}/login
-${WELCOME URL}    http://${SERVER}/
-${ERROR URL}      http://${SERVER}/login
+${WELCOME URL}    https://${SERVER}/
+${ERROR URL}      https://${SERVER}/login
+${FORGOT URL}     https://${SERVER}/forgot-password
 
 *** Keywords ***
 Open Browser To Login Page
@@ -49,3 +50,10 @@ Submit Credentials
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
     Title Should Be    Switch App | DXT360 App
+
+Forgot Password Page Should Be Open
+    Location Should Be    ${FORGOT URL}
+    Title Should Be    Forgot Password | DXT360 App
+
+Return to Login
+    Click Link    link:Return to login
