@@ -10,6 +10,7 @@ Library           Dialogs
 Library           OperatingSystem
 Library           Process
 Library           String
+Variables         load_env.py
 # Library           RequestsLibrary
 # Library           Collections
 # Library           RPA.Browser.Selenium
@@ -18,8 +19,8 @@ Library           String
 ${SERVER}         login-dxt360.sonarplatform.com
 ${BROWSER}        Chrome
 ${DELAY}          1    
-${VALID USER}     
-${VALID PASSWORD}     
+${VALID USER}     ${email_user}
+${VALID PASSWORD}     ${password_user}
 ${INVALID USER}     fail@dxt360.app
 ${INVALID PASSWORD}    p3iN%u26
 ${LOGIN URL}      https://${SERVER}/login
@@ -27,6 +28,7 @@ ${WELCOME URL}    https://${SERVER}/
 ${ERROR URL}      https://${SERVER}/login
 ${FORGOT URL}     https://${SERVER}/forgot-password
 ${HOME URL}       https://dxt360.sonarplatform.com
+
 
 
 *** Keywords ***

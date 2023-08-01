@@ -1,3 +1,4 @@
-arguments.txt
 results/
 devdata/
+.env
+env/
