@@ -3,7 +3,7 @@ Documentation     A test suite with a single test for forgot password.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
-Resource          resource.robot
+Resource          ../../resources/general.resource
 
 *** Test Cases ***
 Forgot Password
@@ -13,3 +13,4 @@ Forgot Password
     Input Username    demo.analytics@dxt360.app
     Return to Login
     Login Page Should Be Open
+    [Teardown]    Close Browser

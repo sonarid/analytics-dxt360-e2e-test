@@ -1,76 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.10.4 on win32)" generated="20230705 17:18:31.686" rpa="false" schemaversion="4">
-<suite id="s1" name="Valid Login" source="C:\Gibran\DxtSonar\analytics-dxt360-e2e-test\login_tests\valid_login.robot">
-<test id="s1-t1" name="Valid Login" line="9">
-<kw name="Open Browser To Login Page" library="resource">
+<robot generator="Robot 6.1 (Python 3.10.4 on win32)" generated="20230711 14:15:49.479" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="c:\Gibran\DxtSonar\analytics-dxt360-e2e-test\tests\login">
+<suite id="s1-s1" name="Forgot Password" source="c:\Gibran\DxtSonar\analytics-dxt360-e2e-test\tests\login\forgot_password.robot">
+<test id="s1-s1-t1" name="Forgot Password" line="9">
+<kw name="Open Browser To Login Page" library="general">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
+<arg>${WELCOME URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230705 17:18:31.858" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/login'.</msg>
-<msg timestamp="20230705 17:18:31.873" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
-<status status="PASS" starttime="20230705 17:18:31.858" endtime="20230705 17:18:33.404"/>
+<msg timestamp="20230711 14:15:49.716" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/'.</msg>
+<msg timestamp="20230711 14:15:49.723" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230711 14:15:49.715" endtime="20230711 14:15:51.250"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230705 17:18:33.404" endtime="20230705 17:18:33.516"/>
+<status status="PASS" starttime="20230711 14:15:51.250" endtime="20230711 14:15:51.371"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>${DELAY}</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230705 17:18:33.516" endtime="20230705 17:18:33.516"/>
+<status status="PASS" starttime="20230711 14:15:51.371" endtime="20230711 14:15:51.372"/>
 </kw>
-<kw name="Login Page Should Be Open" library="resource">
+<kw name="Login Page Should Be Open" library="general">
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login | DXT360 App</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230705 17:18:33.516" level="INFO">Page title is 'Login | DXT360 App'.</msg>
-<status status="PASS" starttime="20230705 17:18:33.516" endtime="20230705 17:18:33.516"/>
+<msg timestamp="20230711 14:15:51.884" level="INFO">Page title is 'Login | DXT360 App'.</msg>
+<status status="PASS" starttime="20230711 14:15:51.372" endtime="20230711 14:15:51.884"/>
 </kw>
-<status status="PASS" starttime="20230705 17:18:33.516" endtime="20230705 17:18:33.516"/>
+<status status="PASS" starttime="20230711 14:15:51.372" endtime="20230711 14:15:51.885"/>
 </kw>
-<status status="PASS" starttime="20230705 17:18:31.858" endtime="20230705 17:18:33.516"/>
+<status status="PASS" starttime="20230711 14:15:49.715" endtime="20230711 14:15:51.885"/>
 </kw>
-<kw name="Input Username" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>link:I forgot my password</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230711 14:15:51.886" level="INFO">Clicking link 'link:I forgot my password'.</msg>
+<msg timestamp="20230711 14:15:52.911" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230711 14:15:52.914" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230711 14:15:51.885" endtime="20230711 14:15:52.917"/>
+</kw>
+<kw name="Forgot Password Page Should Be Open" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:52.918" endtime="20230711 14:15:52.918"/>
+</kw>
+<kw name="Input Username" library="general">
+<arg>demo.analytics@dxt360.app</arg>
+<status status="NOT RUN" starttime="20230711 14:15:52.918" endtime="20230711 14:15:52.918"/>
+</kw>
+<kw name="Return to Login" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:52.919" endtime="20230711 14:15:52.919"/>
+</kw>
+<kw name="Login Page Should Be Open" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:52.919" endtime="20230711 14:15:52.919"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230711 14:15:52.920" endtime="20230711 14:15:55.453"/>
+</kw>
+<status status="FAIL" starttime="20230711 14:15:49.714" endtime="20230711 14:15:55.453">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</status>
+</test>
+<doc>A test suite with a single test for forgot password.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="FAIL" starttime="20230711 14:15:49.503" endtime="20230711 14:15:55.456"/>
+</suite>
+<suite id="s1-s2" name="Valid Login" source="c:\Gibran\DxtSonar\analytics-dxt360-e2e-test\tests\login\valid_login.robot">
+<test id="s1-s2-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" library="general">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${WELCOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230711 14:15:55.464" level="INFO">Opening browser 'Chrome' to base url 'https://login-dxt360.sonarplatform.com/'.</msg>
+<msg timestamp="20230711 14:15:55.471" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230711 14:15:55.463" endtime="20230711 14:15:57.540"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230711 14:15:57.540" endtime="20230711 14:15:58.163"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230711 14:15:58.163" endtime="20230711 14:15:58.163"/>
+</kw>
+<kw name="Login Page Should Be Open" library="general">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Login | DXT360 App</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230711 14:15:58.677" level="INFO">Page title is 'Login | DXT360 App'.</msg>
+<status status="PASS" starttime="20230711 14:15:58.164" endtime="20230711 14:15:58.677"/>
+</kw>
+<status status="PASS" starttime="20230711 14:15:58.164" endtime="20230711 14:15:58.677"/>
+</kw>
+<status status="PASS" starttime="20230711 14:15:55.463" endtime="20230711 14:15:58.677"/>
+</kw>
+<kw name="Input Username" library="general">
 <arg>demo.analytics@dxt360.app</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>css:input[placeholder="Please enter your email Address"]</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230705 17:18:33.516" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
-<status status="PASS" starttime="20230705 17:18:33.516" endtime="20230705 17:18:33.641"/>
+<msg timestamp="20230711 14:15:58.679" level="INFO">Typing text 'demo.analytics@dxt360.app' into text field 'css:input[placeholder="Please enter your email Address"]'.</msg>
+<msg timestamp="20230711 14:15:59.195" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230711 14:15:59.198" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<status status="FAIL" starttime="20230711 14:15:58.678" endtime="20230711 14:15:59.200"/>
 </kw>
-<status status="PASS" starttime="20230705 17:18:33.516" endtime="20230705 17:18:33.641"/>
+<status status="FAIL" starttime="20230711 14:15:58.678" endtime="20230711 14:15:59.200"/>
 </kw>
-<kw name="Input Password" library="resource">
+<kw name="Input Password" library="general">
 <arg>p3iN%u49</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css:input[placeholder="Please enter your password"]</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230705 17:18:33.642" level="INFO">Typing text 'p3iN%u49' into text field 'css:input[placeholder="Please enter your password"]'.</msg>
-<status status="PASS" starttime="20230705 17:18:33.642" endtime="20230705 17:18:33.709"/>
+<status status="NOT RUN" starttime="20230711 14:15:59.201" endtime="20230711 14:15:59.201"/>
 </kw>
-<status status="PASS" starttime="20230705 17:18:33.641" endtime="20230705 17:18:33.709"/>
+<kw name="Wait Captcha" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:59.201" endtime="20230711 14:15:59.201"/>
 </kw>
-<status status="PASS" starttime="20230705 17:18:31.858" endtime="20230705 17:18:33.709"/>
+<kw name="Submit Credentials" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:59.202" endtime="20230711 14:15:59.202"/>
+</kw>
+<kw name="Welcome Page Should Be Open" library="general">
+<status status="NOT RUN" starttime="20230711 14:15:59.202" endtime="20230711 14:15:59.202"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230711 14:15:59.203" endtime="20230711 14:16:01.767"/>
+</kw>
+<status status="FAIL" starttime="20230711 14:15:55.462" endtime="20230711 14:16:01.768">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</status>
 </test>
 <doc>A test suite with a single test for valid login.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" starttime="20230705 17:18:31.686" endtime="20230705 17:18:33.709"/>
+<status status="FAIL" starttime="20230711 14:15:55.457" endtime="20230711 14:16:01.771"/>
+</suite>
+<status status="FAIL" starttime="20230711 14:15:49.483" endtime="20230711 14:16:01.772"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Forgot Password">Login.Forgot Password</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="Valid Login">Login.Valid Login</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230711 14:15:52.911" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
+<msg timestamp="20230711 14:15:59.195" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=114.0.5735.199)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x004DA813+48355]
+	(No symbol) [0x0046C4B1]
+	(No symbol) [0x00375358]
+	(No symbol) [0x0035D293]
+	(No symbol) [0x003BE37B]
+	(No symbol) [0x003CC473]
+	(No symbol) [0x003BA536]
+	(No symbol) [0x003982DC]
+	(No symbol) [0x003993DD]
+	GetHandleVerifier [0x0073AABD+2539405]
+	GetHandleVerifier [0x0077A78F+2800735]
+	GetHandleVerifier [0x0077456C+2775612]
+	GetHandleVerifier [0x005651E0+616112]
+	(No symbol) [0x00475F8C]
+	(No symbol) [0x00472328]
+	(No symbol) [0x0047240B]
+	(No symbol) [0x00464FF7]
+	BaseThreadInitThunk [0x76687D59+25]
+	RtlInitializeExceptionChain [0x773CB74B+107]
+	RtlClearBits [0x773CB6CF+191]
+</msg>
 </errors>
 </robot>
