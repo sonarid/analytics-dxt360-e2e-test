@@ -18,8 +18,8 @@ Library           String
 ${SERVER}         login-dxt360.sonarplatform.com
 ${BROWSER}        Chrome
 ${DELAY}          1    
-${VALID USER}     alertdxt.email.testing@gmail.com
-${VALID PASSWORD}    V00dk41234!!
+${VALID USER}     
+${VALID PASSWORD}     
 ${INVALID USER}     fail@dxt360.app
 ${INVALID PASSWORD}    p3iN%u26
 ${LOGIN URL}      https://${SERVER}/login
