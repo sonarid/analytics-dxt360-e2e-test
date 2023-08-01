@@ -8,12 +8,5 @@ Resource          ../../resources/general.resource
 *** Keywords ***
 Valid Login
     Open Browser To Login Page
-    Input Username    demo.analytics@dxt360.app
-    general.Input Password    p3iN%u49
-    # TODO: Captcha bypass
-    Wait Captcha
+    Input Login Field    ${VALID USER}    ${VALID PASSWORD}
     Submit Credentials        
-    #  ${cookies}=    Get Cookies
-    # # Save the cookies to a file
-    # Create File    session_cookies.txt    ${cookies}
-

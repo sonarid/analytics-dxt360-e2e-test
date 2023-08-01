@@ -6,7 +6,7 @@ Documentation     A resource file with reusable keywords and variables.
 ...               by the imported SeleniumLibrary.
 Library           SeleniumLibrary
 Library           Dialogs
-Library           XML
+# Library           XML
 Library           OperatingSystem
 Library           Process
 Library           String
@@ -18,14 +18,15 @@ Library           String
 ${SERVER}         login-dxt360.sonarplatform.com
 ${BROWSER}        Chrome
 ${DELAY}          1    
-${VALID USER}     demo.analytics@dxt360.app
-${VALID PASSWORD}    p3iN%u49
+${VALID USER}     alertdxt.email.testing@gmail.com
+${VALID PASSWORD}    V00dk41234!!
 ${INVALID USER}     fail@dxt360.app
 ${INVALID PASSWORD}    p3iN%u26
 ${LOGIN URL}      https://${SERVER}/login
 ${WELCOME URL}    https://${SERVER}/
 ${ERROR URL}      https://${SERVER}/login
 ${FORGOT URL}     https://${SERVER}/forgot-password
+${HOME URL}       https://dxt360.sonarplatform.com
 
 
 *** Keywords ***
@@ -46,6 +47,9 @@ Switch App Page Should Be Open
     Set Selenium Speed    0
     Title Should Be    Switch App | DXT360 App
 
+Dashboard Page Should Be Open
+    Title Should Be    Dashboard | DXT 360 
+
 Go To Login Page
     Go To    ${LOGIN URL}
     Login Page Should Be Open
@@ -63,7 +67,7 @@ Wait Captcha
 
 
 Submit Credentials
-    Set Selenium Speed    ${DELAY}
+    # Set Selenium Speed    ${DELAY}
     Submit Form        //form
 
 Login Button Should Be Disabled
@@ -79,23 +83,10 @@ Forgot Password Page Should Be Open
 Return to Login
     Click Link    link:Return to login'
 
-Check If Logged In
-    ${cookies_exist}=    Run Keyword And Return Status    File Should Exist    session_cookies.txt
-    Return From Keyword If    ${cookies_exist}    # Skip login if cookies file exists
-Load Saved Cookies
-     # Read the cookies from the text file
-    ${cookies}=    Get File    session_cookies.txt
-    # Set the cookies for the current session
-    Delete All Cookies
-    FOR    ${cookie_line}    IN    @{cookies.splitlines()}
-        Run Keyword If    '${cookie_line}' != ''    Process Cookie Line    ${cookie_line}
-    END
-
-Process Cookie Line
-    [Arguments]    ${cookie_line}
-    ${name_and_value}=    Evaluate    $cookie_line.split(';')[0]
-    ${name}    ${value}=    Evaluate    $name_and_value.split('=', 1)
-    Add Cookie    ${name}    ${value}
-
+Input Login Field
+    [Arguments]     ${email}     ${password}
+    Input Username    ${email}
+    Input Password    ${password}
+    # Wait Captcha 
 Click Open App
     Click Button    //button[text=]
