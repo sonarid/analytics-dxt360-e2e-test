@@ -25,10 +25,11 @@ To execute the automated test, follow these steps:
 1. Clone or download this repository to your local machine.
 2. Open a terminal and navigate to the directory where the repository is located.
 3. Make sure you have the required dependencies installed (Robot Framework and SeleniumLibrary).
-4. Run the following command to execute the test:
+4. Open `arguments.txt` in the root folder and replace the second line with the directory of test file.
+5. Run the following command to execute the test:
 
    ```shell
-   robot test_suite.robot
+   robot -A arguments.txt
    ```
 
    Replace `test_suite.robot` with the name of the actual test suite file.

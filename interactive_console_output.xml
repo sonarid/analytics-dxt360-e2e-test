@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20230720 10:53:32.468" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\upt sg3\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Valid Login">
+<msg timestamp="20230720 10:53:32.848" level="FAIL">No keyword with name 'Valid Login' found.</msg>
+<status status="FAIL" starttime="20230720 10:53:32.848" endtime="20230720 10:53:32.848"/>
+</kw>
+<kw name="Welcome Page Should Be Open">
+<status status="NOT RUN" starttime="20230720 10:53:32.849" endtime="20230720 10:53:32.849"/>
+</kw>
+<kw name="Click Button">
+<arg>//button</arg>
+<status status="NOT RUN" starttime="20230720 10:53:32.851" endtime="20230720 10:53:32.851"/>
+</kw>
+<status status="PASS" starttime="20230720 10:53:32.486" endtime="20230720 10:53:37.335"/>
+</kw>
+<status status="PASS" starttime="20230720 10:53:32.486" endtime="20230720 10:53:37.335"/>
+</test>
+<status status="PASS" starttime="20230720 10:53:32.469" endtime="20230720 10:53:37.336"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

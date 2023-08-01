@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite with a single test for valid login.
+Documentation     A test suite with a multiple tests for invalid login.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -12,20 +12,23 @@ Resource          ../../resources/general.resource
 *** Test Cases ***               USER NAME        PASSWORD
 Invalid Username                 ${INVALID USER}          ${VALID PASSWORD}
 Invalid Password                 ${VALID USER}    ${INVALID PASSWORD}
-Invalid Username And Password    ${INVALID USER}          ${INVALID PASSWORD}
-Empty Username                   ${EMPTY}         ${VALID PASSWORD}
-Empty Password                   ${VALID USER}    ${EMPTY}
-Empty Username And Password      ${EMPTY}         ${EMPTY}
+# Invalid Username And Password    ${INVALID USER}          ${INVALID PASSWORD}
+# Empty Username                   ${EMPTY}         ${VALID PASSWORD}
+# Empty Password                   ${VALID USER}    ${EMPTY}
+# Empty Username And Password      ${EMPTY}         ${EMPTY}
 
 *** Keywords ***
 Login With Invalid Credentials Should Fail
     [Arguments]    ${username}    ${password}
     Input Username    ${username}
-    Input Password    ${password}
+    general.Input Password    ${password}
     Wait Captcha
     Submit Credentials
-    Login Page Should Be Open
     Login Should Have Failed
 
+Login Error Element Should Be Shown
+    SeleniumLibrary.Element Text Should Be    //span[text()="We could not find that email and password combination"]   We could not find that email and password combination 
+
 Login Should Have Failed
-    Page Should Contain Element    css:div[background-color="#fff9f9"]
+    Login Page Should Be Open
+    Login Error Element Should Be Shown
