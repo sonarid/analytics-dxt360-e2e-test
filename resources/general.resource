@@ -32,18 +32,11 @@ ${HOME URL}       https://dxt360.sonarplatform.com
 
 
 *** Keywords ***
-Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
-    Login Page Should Be Open
 
 Open Browser To Switch App Page
     Open Browser    ${WELCOME URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-
-Login Page Should Be Open
-    Set Selenium Speed    0
-    Title Should Be    Login | DXT360 App
 
 Switch App Page Should Be Open
     Set Selenium Speed    0
@@ -52,9 +45,6 @@ Switch App Page Should Be Open
 Dashboard Page Should Be Open
     Title Should Be    Dashboard | DXT 360 
 
-Go To Login Page
-    Go To    ${LOGIN URL}
-    Login Page Should Be Open
 
 Input Username
     [Arguments]    ${username} 
@@ -67,13 +57,10 @@ Input Password
 Wait Captcha
     Pause Execution             Enter captcha
 
-
 Submit Credentials
     # Set Selenium Speed    ${DELAY}
     Submit Form        //form
 
-Login Button Should Be Disabled
-      Element Should Be Disabled    //button
 
 Welcome Page Should Be Open
     Title Should Be    Switch App | DXT360 App
@@ -82,13 +69,5 @@ Forgot Password Page Should Be Open
     Location Should Be    ${FORGOT URL}
     Title Should Be    Forgot Password | DXT360 App
 
-Return to Login
-    Click Link    link:Return to login'
-
-Input Login Field
-    [Arguments]     ${email}     ${password}
-    Input Username    ${email}
-    Input Password    ${password}
-    # Wait Captcha 
 Click Open App
     Click Button    //button[text=]

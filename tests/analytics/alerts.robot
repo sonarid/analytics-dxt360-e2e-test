@@ -1,24 +1,20 @@
 *** Settings ***
-Documentation     test analytics
+Documentation     Test for Alerts Page
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
 Resource          ../../resources/general.resource
-Resource          open_analytics.robot
-Resource          ../login/valid_login.robot
+Resource          ../../resources/analytics_page.resource
+
 
 
 *** Keywords ***
 Click Alerts Sidebar Button
-    Click Element    //aside/nav/ul/li[5]
-    Wait Until Page Does Not Contain Element    //title[text()="Dashboard | DXT 360"]
-    Location Should Be    ${HOME URL}/alerts
-    Wait Until Page Contains Element    //title[text()="Alerts | DXT 360"]
-    Title Should Be    Alerts | DXT 360
+    Click Sidebar Navigation Button   //aside/nav/ul/li[5]    Alerts | DXT 360    alerts
 
 *** Test Cases ***
 
-Check Search
+Check Alerts Page
     Valid Switch App
     Click Alerts Sidebar Button
     [Teardown]     Close Browser
