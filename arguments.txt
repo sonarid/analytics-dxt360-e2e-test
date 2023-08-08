@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\
+tests\login\invalid_forgot_password.robot

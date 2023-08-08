@@ -1,11 +1,10 @@
 *** Settings ***
-Documentation     test analytics
+Documentation      Test for Dashboard Page
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
 Resource          ../../resources/general.resource
-Resource          open_analytics.robot
-Resource    ../login/valid_login.robot
+Resource          ../../resources/analytics_page.resource
 
 
 *** Keywords ***

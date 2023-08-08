@@ -1,23 +1,19 @@
 *** Settings ***
-Documentation     test analytics
+Documentation      Test for Search Page
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
 Resource          ../../resources/general.resource
-Resource          open_analytics.robot
-Resource    ../login/valid_login.robot
+Resource          ../../resources/analytics_page.resource
 
 
 *** Keywords ***
 Click Search Sidebar Button
-    Set Selenium Speed    0.5
-    Click Element    //aside/nav/ul/li[2]
-    Wait Until Page Does Not Contain Element    //title[text()="Dashboard | DXT 360"]
-    Title Should Be    Search | DXT 360
+    Click Sidebar Navigation Button   //aside/nav/ul/li[2]    Search | DXT 360    search
 
 *** Test Cases ***
 
-Check Search
+Check Search Page
     Valid Switch App
     Click Search Sidebar Button
     [Teardown]     Close Browser

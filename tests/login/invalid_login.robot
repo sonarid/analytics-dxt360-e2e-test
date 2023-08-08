@@ -8,11 +8,12 @@ Suite Teardown    Close Browser
 Test Setup        Go To Login Page
 Test Template     Login With Invalid Credentials Should Fail
 Resource          ../../resources/general.resource
+Resource          ../../resources/login_page.resource
 
 *** Test Cases ***               USER NAME        PASSWORD
 Invalid Username                 ${INVALID USER}          ${VALID PASSWORD}
 Invalid Password                 ${VALID USER}    ${INVALID PASSWORD}
-# Invalid Username And Password    ${INVALID USER}          ${INVALID PASSWORD}
+Invalid Username And Password    ${INVALID USER}          ${INVALID PASSWORD}
 # Empty Username                   ${EMPTY}         ${VALID PASSWORD}
 # Empty Password                   ${VALID USER}    ${EMPTY}
 # Empty Username And Password      ${EMPTY}         ${EMPTY}
@@ -20,10 +21,8 @@ Invalid Password                 ${VALID USER}    ${INVALID PASSWORD}
 *** Keywords ***
 Login With Invalid Credentials Should Fail
     [Arguments]    ${username}    ${password}
-    Input Username    ${username}
-    general.Input Password    ${password}
-    Wait Captcha
-    Submit Credentials
+    Input Invalid Login Field    ${username}    ${password}
+    Wait Until Page Contains Element    //button[text()='Log In' and not(@disabled)]
     Login Should Have Failed
 
 Login Error Element Should Be Shown

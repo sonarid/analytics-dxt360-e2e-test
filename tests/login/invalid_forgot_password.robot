@@ -4,20 +4,17 @@ Documentation     A test suite with multiple tests for invalid forgot password.
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
 Suite Setup       Open Browser To Login Page
-Suite Teardown    Close Browser
-Test Setup        Go To Login Page
-Test Template     Forgot Password With Invalid Credentials Should Fail
 Resource          ../../resources/general.resource
+Resource          ../../resources/login_page.resource
 
 *** Test Cases ***               USER NAME        
-Invalid Email                 ${INVALID USER}
-Empty Username                ${EMPTY}
+Invalid Email | ${INVALID USER}
+Empty Username | ${EMPTY}
 
 *** Keywords ***
 Forgot Password With Invalid Credentials Should Fail
     [Arguments]    ${email}    
-    Open Browser To Login Page
-    Click Link    link:I forgot my password
+    Click Link    link:Forgot Password?
     Forgot Password Page Should Be Open
     Input Username    ${email}
     Wait Captcha
