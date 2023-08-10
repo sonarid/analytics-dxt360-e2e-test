@@ -17,4 +17,3 @@ Check Search Page
     Valid Switch App
     Click Search Sidebar Button
     [Teardown]     Close Browser
-    

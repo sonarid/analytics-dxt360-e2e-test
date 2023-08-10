@@ -3,8 +3,8 @@ Documentation     Test for Alerts Page
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
-Resource          ../../resources/general.resource
-Resource          ../../resources/analytics_page.resource
+Resource          ../../../resources/general.resource
+Resource          ../../../resources/analytics_page.resource
 
 
 
