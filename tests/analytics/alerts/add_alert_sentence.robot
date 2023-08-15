@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test for Adding New Alerts by Keywords
+Documentation     Test for Adding New Alerts by Sentence Type
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -9,13 +9,12 @@ Resource          add_alert.resource
 Library    XML
 
 *** Keywords ***
+
+
 Select Alert Filtering
-    
-    Select Sentiment    Positive
     Select Campaign    Toyota
-    Select Source    Forums
-    Select Keyword    telkom
-    Input Buzz Count    200
+    Select Source    YouTube
+    Select Type    Wish
     Click Continue Button
 
 Select Alert Interval
@@ -33,8 +32,7 @@ Check If Alert Data is Correct
     [Arguments]
     Check Single Alert Data    Alert Name    Testing Robot
     Check Single Alert Data    Interval    30 Minutes
-    Check Multiple Alert Data    Alert Type    Keywords
-    Check Multiple Alert Data    Sentiment    Positive
+    Check Multiple Alert Data    Alert Type    Sentence Type
     Check Multiple Alert Data    Campaign    Toyota
     Check Contact Alert Data    Email    alertdxt.email.testing@gmail.com
     Check Contact Alert Data    Line    Alert Line 22
@@ -45,7 +43,7 @@ Add Alert by Keyword
     Valid Switch App
     Click Sidebar Navigation Button   //aside/nav/ul/li[5]    Alerts | DXT 360    alerts
     Click Add Alert
-    Select Alert Type    Testing Robot    Keywords
+    Select Alert Type    Testing Robot    Sentence Type
     Click Continue Button
     Select Alert Filtering
     Select Alert Interval
