@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\analytics\addmember\add_member_full.robot
+tests\analytics\alerts\set_active_alert.robot
