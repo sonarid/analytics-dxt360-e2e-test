@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\analytics\manage_members\delete_member.robot
+tests\analytics\manage_members\edit_member.robot

@@ -11,9 +11,7 @@ Resource          manage_member.resource
 ${USER NAME}        testing robot
 
 *** Keywords ***
-Click Kebab
-    [Arguments]    ${user}
-    Click Element    //td/*[text()="${user}"]/parent::td/following-sibling::td[5]/div/button
+
 
 Click Delete
     [Arguments]    ${user}

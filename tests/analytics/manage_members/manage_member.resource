@@ -13,3 +13,22 @@ Open Manage Members
     Click Element    //a[@href="/users"]
     Wait Until Location Contains    users    10
     Click Element    //*[@placeholder="Search"]
+
+Click Kebab
+    [Arguments]    ${user}
+    Wait Until Page Contains Element    //tr    10
+    Click Element    //td/*[text()="${user}"]/parent::td/following-sibling::td[5]/div/button
+
+Select Campaign
+    [Arguments]    ${campaign}
+    Click Element                       //h4[text()="Campaigns"]/following-sibling::div
+    Wait Until Page Contains Element    //div[@class="grid grid-cols-3 gap-3"]
+    Click Element                       //div/*[text()="${campaign}"]/parent::div
+    Press Keys                          None   ESC
+
+Select Dashboard
+    # [Arguments]    ${dashboard}
+    Click Element                       //h4[text()="Dashboard"]/parent::div/following-sibling::div
+    Wait Until Page Contains Element    //*[text()="Dashboard (Specific User Type)"]/following-sibling::div/li
+    Press Keys                          None   ESC
+
