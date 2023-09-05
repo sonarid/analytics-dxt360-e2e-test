@@ -8,6 +8,3 @@ load_dotenv()
 
 email_user = os.environ['EMAIL']
 password_user = os.environ['PASSWORD']
-
-
-
