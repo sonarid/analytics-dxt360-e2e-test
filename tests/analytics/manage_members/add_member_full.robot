@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation      Test for Adding Member Trial User
+Documentation      Test for Adding Member Full User
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
@@ -24,7 +24,7 @@ Input User Information
 
 Select Activated Apps
     # @TODO: Bug cant clik on locator based on "DXT360 Analytics" text()
-    Click Element    //div[@class="px-4 py-3 flex items-center"]/input
+    Click Element    //*[text()="DXT360 Analytics"]/preceding-sibling::input
     Click Element    //*[text()="Edit sentiment"]
 
 *** Test Cases ***
