@@ -120,3 +120,30 @@ Check Contact Alert Data
     [Arguments]    ${label}    ${data}
     SeleniumLibrary.Element Text Should Be    //div/*[text()="${label}"]/parent::div/following-sibling::div/span    ${data}
 
+Set Active State
+    [Arguments]    ${alert_name}    ${active_state}
+    Wait Until Page Contains Element    //table
+    Click Element    //*[@placeholder="Search"] 
+    ${curr_active_state}=    Get Text    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[5]/span
+    Click Element    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[6][@class="p-3 align-top"]/button
+    IF    "${active_state}" == "Active"
+        Click Element    //*[text()="Set to Active"]
+    ELSE
+        Click Element    //*[text()="Set to Inactive"]
+    END
+    Click Element    //*[@placeholder="Search"] 
+    Input Text    //*[@placeholder="Search"]     ${alert_name}
+    Wait Until Page Contains Element    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[5]/span[text()="${active_state}"]    10
+    Element Text Should Be    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[5]/span    ${active_state}
+       
+Revert Active State   
+    [Arguments]    ${alert_name}
+    Click Element    //*[@placeholder="Search"] 
+    ${curr_active_state}=    Get Text    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[5]/span
+    Click Element    //td/a[text()="${alert_name}"]/parent::td/following-sibling::td[6][@class="p-3 align-top"]/button
+    IF    "${curr_active_state}" == "Active"
+        Click Element    //*[text()="Set to Inactive"]
+    ELSE
+        Click Element    //*[text()="Set to Active"]
+    END
+    Click Element    //*[@placeholder="Search"] 
