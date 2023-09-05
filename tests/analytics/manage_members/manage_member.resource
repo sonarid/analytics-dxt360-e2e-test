@@ -31,4 +31,3 @@ Select Dashboard
     Click Element                       //h4[text()="Dashboard"]/parent::div/following-sibling::div
     Wait Until Page Contains Element    //*[text()="Dashboard (Specific User Type)"]/following-sibling::div/li
     Press Keys                          None   ESC
-
