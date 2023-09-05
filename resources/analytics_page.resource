@@ -17,7 +17,7 @@ Valid Switch App
 Click Sidebar Navigation Button
     [Arguments]    ${page_button_locator}    ${page_title}    ${url_suffix} 
     Click Element    ${page_button_locator}
-    Wait Until Page Does Not Contain Element    //title[text()="Dashboard | DXT 360"]
+    Wait Until Page Does Not Contain Element    //title[text()="Dashboard | DXT 360"]    10
     Location Should Be    ${HOME URL}/${url_suffix}
-    Wait Until Page Contains Element    //title[text()="${page_title}"]
+    Wait Until Page Contains Element    //title[text()="${page_title}"]    10
     Title Should Be    ${page_title}     

@@ -1,2 +1,2 @@
 --outputdir results\\
-tests\analytics\alerts\add_alerts.robot
+tests\analytics\alerts\add_alert_sentence.robot
