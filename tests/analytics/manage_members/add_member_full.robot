@@ -23,7 +23,6 @@ Input User Information
     Wait Until Location Contains    app-activation    10
 
 Select Activated Apps
-    # @TODO: Bug cant clik on locator based on "DXT360 Analytics" text()
     Click Element    //*[text()="DXT360 Analytics"]/preceding-sibling::input
     Click Element    //*[text()="Edit sentiment"]
 

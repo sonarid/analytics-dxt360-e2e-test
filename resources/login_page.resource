@@ -12,7 +12,7 @@ Valid Login
            
 Input Login Field
     [Arguments]     ${email}     ${password}
-    Input Username    ${email}
+    Input Username      ${email}
     general.Input Password    ${password}
     Wait Until Page Contains Element    //*[text()='Log In' and not(contains(@class, 'disabled'))]
     Submit Credentials 
