@@ -4,3 +4,4 @@ devdata/
 env/
 resources/__pycache__/
 venv/
+interactive_console_output.xml
