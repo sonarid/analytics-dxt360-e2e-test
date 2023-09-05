@@ -6,6 +6,7 @@ Documentation      Test for Adding Member Trial User
 Resource          ../../../resources/general.resource
 Resource          ../../../resources/analytics_page.resource
 Resource          manage_member.resource
+
 *** Keywords ***
 Open Add Member
     Click Button    //button[text()="Add User"]
@@ -23,11 +24,15 @@ Input User Information
 
 Select Activated Apps
     # @TODO: Bug cant clik on locator based on "DXT360 Analytics" text()
-    Click Element    //div[@class="px-4 py-3 flex items-center"]/input
-    Click Element    //*[text()="Edit sentiment"]
+
 
 *** Test Cases ***
 Add Member Trial
+    Click Element    //*[text()="DXT360 Analytics"]/preceding-sibling::input
+    Click Element    //*[text()="Edit sentiment"]
+
+*** Test Cases ***
+Add Member Full
     Valid Switch App 
     Open Manage Members
     Open Add Member
