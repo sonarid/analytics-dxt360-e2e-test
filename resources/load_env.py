@@ -9,5 +9,7 @@ load_dotenv()
 email_user = os.environ['EMAIL']
 password_user = os.environ['PASSWORD']
 
+email_cx = os.environ['CXMAIL']
+password_cx = os.environ['CXPASSWORD']
 
 
