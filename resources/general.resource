@@ -20,7 +20,7 @@ ${SERVER}         login-dxt360.sonarplatform.com
 ${BROWSER}        Chrome
 ${DELAY}          1    
 ${VALID USER}     ${email_user}
-${VALID PASSWORD}     ${password_user}
+${VALID PASSWORD}   ${password_user}
 ${INVALID USER}     fail@dxt360.app
 ${INVALID PASSWORD}    p3iN%u26
 ${LOGIN URL}      https://${SERVER}/login
@@ -28,6 +28,9 @@ ${WELCOME URL}    https://${SERVER}/
 ${ERROR URL}      https://${SERVER}/login
 ${FORGOT URL}     https://${SERVER}/forgot-password
 ${HOME URL}       https://dxt360.sonarplatform.com
+${USER CX}       ${email_cx}
+${PASSWORD CXTEAM}    ${password_cx}
+
 
 
 
@@ -42,7 +45,7 @@ Switch App Page Should Be Open
     Set Selenium Speed    0
     Title Should Be    Switch App | DXT360 App
 
-Dashboard Page Should Be Open
+Dashboard Page Should Be Open 
     Title Should Be    Dashboard | DXT 360 
 
 
@@ -71,3 +74,7 @@ Forgot Password Page Should Be Open
 
 Click Open App
     Click Button    //button[text=]
+
+Choose Client CX
+    Click Element    //span[text()="Mrson"] 
+       

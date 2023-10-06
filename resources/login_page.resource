@@ -9,6 +9,18 @@ Resource          general.resource
 Valid Login
     Open Browser To Login Page
     Input Login Field    ${VALID USER}    ${VALID PASSWORD}
+
+Valid Login cx
+    Open Browser To Login Page
+    Input Login Field cx   ${USER CX}    ${PASSWORD CXTEAM}    
+
+Input Login Field cx
+    [Arguments]     ${email_cx}     ${password_cx}
+    Input Username    ${email_cx}
+    general.Input Password    ${password_cx}
+    Wait Until Page Contains Element    //*[text()='Log In' and not(contains(@class, 'disabled'))]
+    Submit Credentials 
+
            
 Input Login Field
     [Arguments]     ${email}     ${password}

@@ -1,2 +1,2 @@
---outputdir results\\
-tests\analytics\manage_members\add_member_trial.robot
+--outputdir results//
+tests/analytics/my_data/generated_tmp.robot
